@@ -11,17 +11,9 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
 		<!--[if lte IE 8]><script src="assets/js/ie/html5shiv.js"></script><![endif]-->
 		<link rel="stylesheet" href="assets/css/main.css" />
-		<!--[if lte IE 8]><link rel="stylesheet" href="assets/css/ie8.css" /><![endif]-->
-		<!--[if lte IE 9]><link rel="stylesheet" href="assets/css/ie9.css" /><![endif]-->
-		<link rel="apple-touch-icon" sizes="57x57" href="/apple-icon-57x57.png">
-		<link rel="apple-touch-icon" sizes="60x60" href="/apple-icon-60x60.png">
-		<link rel="apple-touch-icon" sizes="72x72" href="/apple-icon-72x72.png">
-		<link rel="apple-touch-icon" sizes="76x76" href="/apple-icon-76x76.png">
-		<link rel="apple-touch-icon" sizes="114x114" href="/apple-icon-114x114.png">
-		<link rel="apple-touch-icon" sizes="120x120" href="/apple-icon-120x120.png">
-		<link rel="apple-touch-icon" sizes="144x144" href="/apple-icon-144x144.png">
-		<link rel="apple-touch-icon" sizes="152x152" href="/apple-icon-152x152.png">
-		<link rel="apple-touch-icon" sizes="180x180" href="/apple-icon-180x180.png">
+		<link rel="stylesheet" href="http://www.w3schools.com/lib/w3.css">
+      	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
+      	<link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css">
 		<link rel="icon" type="image/png" sizes="192x192"  href="/android-icon-192x192.png">
 		<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
 		<link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png">
@@ -35,11 +27,28 @@
 	</head>
 	<body class="landing">
 
+	<!-- Navbar -->
+      <div class="w3-top" style="z-index: 999">
+      <ul class="w3-navbar w3-white w3-card-2 w3-left-align">
+        <li class="w3-hide-medium w3-hide-large w3-opennav w3-right">
+          <a class="w3-padding-large" href="javascript:void(0)" onclick="myFunction()" title="Toggle Navigation Menu"><i class="fa fa-bars"></i></a>
+        </li>
+        <li><a href="index.html" class="w3-hover-none w3-hover-text-grey w3-padding-large">[borrow]</a></li>
+        <li class="w3-hide-small"><a href="aboutus.html" class=" w3-padding-large">about</a></li>
+      </div>
+
+      <!-- Navbar on small screens -->
+      <div id="navDemo" class="w3-hide w3-hide-large w3-hide-medium w3-top" style="margin-top:46px">
+        <ul class="w3-navbar w3-left-align w3-black">
+          <li><a class="w3-padding-large" href="#aboutDiv">About</a></li>
+        </ul>
+      </div>
+
 		<!-- Page Wrapper -->
 			<div id="page-wrapper">
 
 				<!-- Header -->
-					<header id="header" class="alt">
+					<!-- <header id="header" class="alt">
 						<h1><a href="index.html"><img src="images/new_logo_small.png" alt="" style="vertical-align:middle;">[BORROW]</a></h1>
 						<nav id="nav">
 							<ul>
@@ -56,7 +65,7 @@
 							</ul>
 						</nav>
 
-					</header>
+					</header> -->
 
 				<!-- Banner -->
 					<section id="banner">
@@ -149,6 +158,5 @@
 			<script src="assets/js/util.js"></script>
 			<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
 			<script src="assets/js/main.js"></script>
-
 	</body>
 </html>
