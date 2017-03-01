@@ -29,62 +29,6 @@
 		<link rel="icon" href="/favicon.ico" type="image/x-icon">
 	</head>
 	<body>
-	<?php
-	$first = $last = $email = $street = $city = $state = $zip = $password = "";
-        $firsterr = $lasterr = $emailerr = $streeterr = $cityerr = $stateerr = $ziperr = $passworderr = "";
-
-        
-	if ($_SERVER["REQUEST_METHOD"] == "POST") {
-	if (empty($_POST["first"])) {
-	    $firstErr = "First Name is required";
-	      } else {
-	$first = test_input($_POST["first"]);
-	}
-	if (empty($_POST["last"])) {
-	    $lastErr = "Last Name is required";
-	      } else {
-	$last = test_input($_POST["last"]);
-	}
-	if (empty($_POST["email"])) {
-	    $emailErr = "Email is required";
-	      } else {
-	$email = test_input($_POST["email"]);
-	}
-	if (empty($_POST["street"])) {
-	    $streetErr = "Street is required";
-	      } else {
-	$street = test_input($_POST["street"]);
-	}
-	if (empty($_POST["city"])) {
-	    $CityErr = "City is required";
-	      } else {
-	$city = test_input($_POST["city"]);
-	}
-	if (empty($_POST["state"])) {
-	    $stateErr = "State is required";
-	      } else {
-	$state = test_input($_POST["state"]);
-	}
-	if (empty($_POST["zip"])) {
-	    $zipErr = "Zip Code is required";
-	      } else {
-	$zip = test_input($_POST["zip"]);
-	}
-	if (empty($_POST["password"])) {
-	    $passwordErr = "Password is required";
-	      } else {
-	$password = test_input($_POST["password"]);
-	}
-       }
-
-
-	function test_input($data) {
-	  $data = trim($data);
-          $data = stripslashes($data);
-          $data = htmlspecialchars($data);
-        return $data;
-	}
-	?>
 
 		<!-- Navbar -->
       <div class="w3-top" style="z-index: 999">
@@ -144,70 +88,61 @@
 								 <div id="signup">
 								  <h1>Sign Up For Free</h1>
 
-								 <form method="POST"
-								 action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
-								 
+								  <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>"> 
+								
 
-
-      								   <div class=field-wrap">
+								  <div class="top-row">
+								   <div class=field-wrap">
 								   <label>
 								    First Name<span class="req">*</span>
 								   </label>
-								   <input type="text" name="first" required autocomplete="off" />
-								    <span class="error">* <?php echo $firstErr;?></span>
+								   <input type="text" required autocomplete="off" />
 								  </div>
 								
 								 <label>
 								   Last Name<span class="req">*</span>
-			          				 </label>																		                                                                          <input type="text" name="last" required autocomplete="off" />
-								 <span class="error">* <?php echo $lastErr;?></span>
-								 </div>
+			          				 </label>																		                                                                          <input type="text" required autocomplete="off" />													                                              </div>
+                   
 								  <div class="field-wrap">
 								   <label>
 								    Email Address<span class="req">*</span>
 								   </label>
-								   <input type="text" name="email" required autocomplete="off" />
-								   <span class="error">* <?php echo $emailErr;?></span>
+								   <input type="email" required autocomplete="off" />
 								   </div>
 
 								   <div class="field-wrap">
 								   <label>
 								   Street Address<span class="req">*</span>
 								   </label>
-								   <input type="text" name="street" required autocomplete="off" />
-								   <span class="error">* <?php echo $streetErr;?></span>
+								   <input type="street" required autocomplete="off" />
 								   </div>
 
 								   <div class="field-wrap">
 								   <label>
 								   City<span class="req">*</span>
 								   </label>
-								   <input type="text" name="city" required autocomplete="off" />
-								   <span class="error">* <?php echo $cityErr;?></span>
+								   <input type="city" required autocomplete="off" />
 								   </div>
 
 								   <div class="field-wrap">
 								   <label>
 								   State<span class="req">*</span>
 								   </label>
-								   <input type="text" name="state" required autocomplete="off" />
-								   <span class="error">* <?php echo $stateErr;?></span>
+								   <input type="state" required autocomplete="off" />
 								   </div>
 
 								   <div class="field-wrap">
 								   <label>
 								   5 Digit Zip Code<span class="req">*</span>
 								   </label>
-								   <input type="text" name="zip" required autocomplete="off" />
-								   <span class="error">* <?php echo $zipErr;?></span>
+								   <input type="zip" required autocomplete="off" />
 								   </div>
 
 								   <div class="field-wrap">
 								   <label>
 								    Password<span class="req">*</span>
 								   </label>
-								   <input type="text" name="password" required autocomplete="off" />
-								   <span class="error">* <?php echo $passwordErr;?></span>
+								   <input type="zip" required autocomplete="off" />
 								   </div>
 
 								   <button type="submit" class="button button-block"/>Sign Me Up!</button>
