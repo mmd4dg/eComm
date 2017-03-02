@@ -70,14 +70,14 @@
 								action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>
 								<div class="top-row">
 									<div class="field-wrap">
-										<label>First Name<span class="req">*</span></label>
-										<input type="text" name="first" required autocomplete="off" />
-										<span class="error"><?php echo $firstErr;?></span>
+										  <label>First Name<span class="req">*</span></label>
+							                          <input type="text" name="first" required autocomplete="off" />
+										   <span class="error"><?php echo $firsterr;?></span>	
 									</div>
 									<div class="field-wrap">
 										<label>Last Name<span class="req">*</span></label>
 										<input type="text" name="last" required autocomplete="off" />
-										<span class="error"><?php echo $lastErr;?></span>
+										<span class="error"><?php echo $lasterr;?></span>
 									</div>
 								</div>
 								<div class="top-row">
@@ -86,7 +86,7 @@
 											Email Address<span class="req">*</span>
 										</label>
 										<input type="text" name="email" required autocomplete="off" />
-										<span class="error"><?php echo $emailErr;?></span>
+										<span class="error"><?php echo $emailerr;?></span>
 									</div>
 									<div class="field-wrap">
 										<label>
@@ -102,14 +102,14 @@
 											Street Address<span class="req">*</span>
 										</label>
 										<input type="text" name="street" required autocomplete="off" />
-										<span class="error"><?php echo $streetErr;?></span>
+										<span class="error"><?php echo $streeterr;?></span>
 									</div>
 									<div class="field-wrap">
 										<label>
 											City<span class="req">*</span>
 										</label>
 										<input type="text" name="city" required autocomplete="off" />
-										<span class="error"><?php echo $cityErr;?></span>
+										<span class="error"><?php echo $cityerr;?></span>
 									</div>
 								</div>
 
@@ -119,14 +119,14 @@
 											State<span class="req">*</span>
 										</label>
 										<input type="text" name="state" required autocomplete="off" />
-										<span class="error"><?php echo $stateErr;?></span>
+										<span class="error"><?php echo $stateerr;?></span>
 									</div>
 									<div class="field-wrap">
 										<label>
 											Zip<span class="req">*</span>
 										</label>
 										<input type="text" name="zip" required autocomplete="off" />
-										<span class="error"><?php echo $zipErr;?></span>
+										<span class="error"><?php echo $ziperr;?></span>
 									</div>
 								</div>
 
@@ -135,7 +135,7 @@
 										Password<span class="req">*</span>
 									</label>
 									<input type="text" name="password" required autocomplete="off" />
-									<span class="error"><?php echo $passwordErr;?></span>
+									<span class="error"><?php echo $passworderr;?></span>
 								</div>
 
 								<div style="padding-top: 5ex">
@@ -179,42 +179,74 @@
 
 	if ($_SERVER["REQUEST_METHOD"] == "POST") {
 		if (empty($_POST["first"])) {
-			$firstErr = "First Name is required";
+			$firsterr = "First Name is required";
 		} else {
 			$first = test_input($_POST["first"]);
+		if (!preg_match("/^[a-zA-Z ]*$/",$first)) {
+		      $firsterr = "Only letters and white space allowed";
 		}
+	
+		
 		if (empty($_POST["last"])) {
-			$lastErr = "Last Name is required";
+			$lasterr = "Last Name is required";
 		} else {
 			$last = test_input($_POST["last"]);
+		if (!preg_match("/^[a-zA-Z ]*$/",$last)) {
+		      $lasterr = "Only letters and white space allowed";
 		}
+
+		
+		
 		if (empty($_POST["email"])) {
-			$emailErr = "Email is required";
+			$emailerr = "Email is required";
 		} else {
 			$email = test_input($_POST["email"]);
+		if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+		      $emailerr = "Invalid email format";
 		}
+		
+		
 		if (empty($_POST["street"])) {
-			$streetErr = "Street is required";
+			$streeterr = "Street is required";
 		} else {
 			$street = test_input($_POST["street"]);
+		if (!preg_match("/^[a-zA-Z ]*$/",$street)) {
+		      $streeterr = "Only letters and white space allowed";
 		}
+		
+		
 		if (empty($_POST["city"])) {
-			$CityErr = "City is required";
+			$cityerr = "City is required";
 		} else {
 			$city = test_input($_POST["city"]);
+		if (!preg_match("/^[a-zA-Z ]*$/",$city)) {
+		      $cityerr = "Only letters and white space allowed";
 		}
+		
+		
 		if (empty($_POST["state"])) {
-			$stateErr = "State is required";
+			$stateerr = "State is required";
 		} else {
 			$state = test_input($_POST["state"]);
+		if (!preg_match("/^[a-zA-Z ]*$/",$state)) {
+		      $stateerr = "Only letters and white space allowed";
 		}
+
+		
+		
 		if (empty($_POST["zip"])) {
-			$zipErr = "Zip Code is required";
+			$ziperr = "Zip Code is required";
 		} else {
 			$zip = test_input($_POST["zip"]);
+		if (is_numeric($zip)) {
+			$ziperr = "Only numbers allowed";
+			}
 		}
+
+		
+		
 		if (empty($_POST["password"])) {
-			$passwordErr = "Password is required";
+			$passworderr = "Password is required";
 		} else {
 			$password = test_input($_POST["password"]);
 		}
