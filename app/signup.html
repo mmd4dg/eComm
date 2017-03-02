@@ -185,6 +185,7 @@
 		if (!preg_match("/^[a-zA-Z ]*$/",$first)) {
 		      $firsterr = "Only letters and white space allowed";
 		}
+		}
 	
 		
 		if (empty($_POST["last"])) {
@@ -194,7 +195,7 @@
 		if (!preg_match("/^[a-zA-Z ]*$/",$last)) {
 		      $lasterr = "Only letters and white space allowed";
 		}
-
+		}
 		
 		
 		if (empty($_POST["email"])) {
@@ -203,6 +204,7 @@
 			$email = test_input($_POST["email"]);
 		if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
 		      $emailerr = "Invalid email format";
+		}
 		}
 		
 		
@@ -213,6 +215,7 @@
 		if (!preg_match("/^[a-zA-Z ]*$/",$street)) {
 		      $streeterr = "Only letters and white space allowed";
 		}
+		}
 		
 		
 		if (empty($_POST["city"])) {
@@ -222,7 +225,7 @@
 		if (!preg_match("/^[a-zA-Z ]*$/",$city)) {
 		      $cityerr = "Only letters and white space allowed";
 		}
-		
+		}
 		
 		if (empty($_POST["state"])) {
 			$stateerr = "State is required";
@@ -231,7 +234,7 @@
 		if (!preg_match("/^[a-zA-Z ]*$/",$state)) {
 		      $stateerr = "Only letters and white space allowed";
 		}
-
+		}
 		
 		
 		if (empty($_POST["zip"])) {
