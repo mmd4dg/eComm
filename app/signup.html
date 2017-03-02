@@ -66,18 +66,17 @@
 						<div class="form">
 							<div id="signup">
 								<h1>Sign Up For Free</h1>
-								<form method="POST"
-								action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>
+								<form method="POST" action="sign_up.php">
 								<div class="top-row">
 									<div class="field-wrap">
-										  <label>First Name<span class="req">*</span></label>
-							                          <input type="text" name="first" required autocomplete="off" />
-										   <span class="error"><?php echo $firsterr;?></span>	
+										<label>First Name<span class="req">*</span></label>
+										<input type="text" name="first" required autocomplete="off" />
+										<span class="error"><?php echo $firstErr;?></span>
 									</div>
 									<div class="field-wrap">
 										<label>Last Name<span class="req">*</span></label>
 										<input type="text" name="last" required autocomplete="off" />
-										<span class="error"><?php echo $lasterr;?></span>
+										<span class="error"><?php echo $lastErr;?></span>
 									</div>
 								</div>
 								<div class="top-row">
@@ -86,7 +85,7 @@
 											Email Address<span class="req">*</span>
 										</label>
 										<input type="text" name="email" required autocomplete="off" />
-										<span class="error"><?php echo $emailerr;?></span>
+										<span class="error"><?php echo $emailErr;?></span>
 									</div>
 									<div class="field-wrap">
 										<label>
@@ -102,14 +101,14 @@
 											Street Address<span class="req">*</span>
 										</label>
 										<input type="text" name="street" required autocomplete="off" />
-										<span class="error"><?php echo $streeterr;?></span>
+										<span class="error"><?php echo $streetErr;?></span>
 									</div>
 									<div class="field-wrap">
 										<label>
 											City<span class="req">*</span>
 										</label>
 										<input type="text" name="city" required autocomplete="off" />
-										<span class="error"><?php echo $cityerr;?></span>
+										<span class="error"><?php echo $cityErr;?></span>
 									</div>
 								</div>
 
@@ -119,14 +118,14 @@
 											State<span class="req">*</span>
 										</label>
 										<input type="text" name="state" required autocomplete="off" />
-										<span class="error"><?php echo $stateerr;?></span>
+										<span class="error"><?php echo $stateErr;?></span>
 									</div>
 									<div class="field-wrap">
 										<label>
 											Zip<span class="req">*</span>
 										</label>
 										<input type="text" name="zip" required autocomplete="off" />
-										<span class="error"><?php echo $ziperr;?></span>
+										<span class="error"><?php echo $zipErr;?></span>
 									</div>
 								</div>
 
@@ -134,8 +133,8 @@
 									<label>
 										Password<span class="req">*</span>
 									</label>
-									<input type="text" name="password" required autocomplete="off" />
-									<span class="error"><?php echo $passworderr;?></span>
+									<input type="password" name="password" required autocomplete="off" />
+									<span class="error"><?php echo $passwordErr;?></span>
 								</div>
 
 								<div style="padding-top: 5ex">
@@ -172,96 +171,18 @@
 <script src="assets/js/util.js"></script>
 <!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
 <script src="assets/js/main.js"></script>
-<script>
-	<?php
-	$first = $last = $email = $street = $city = $state = $zip = $password = "";
-	$firsterr = $lasterr = $emailerr = $streeterr = $cityerr = $stateerr = $ziperr = $passworderr = "";
 
-	if ($_SERVER["REQUEST_METHOD"] == "POST") {
-		if (empty($_POST["first"])) {
-			$firsterr = "First Name is required";
-		} else {
-			$first = test_input($_POST["first"]);
-		if (!preg_match("/^[a-zA-Z ]*$/",$first)) {
-		      $firsterr = "Only letters and white space allowed";
-		}
-		}
-	
-		
-		if (empty($_POST["last"])) {
-			$lasterr = "Last Name is required";
-		} else {
-			$last = test_input($_POST["last"]);
-		if (!preg_match("/^[a-zA-Z ]*$/",$last)) {
-		      $lasterr = "Only letters and white space allowed";
-		}
-		}
-		
-		
-		if (empty($_POST["email"])) {
-			$emailerr = "Email is required";
-		} else {
-			$email = test_input($_POST["email"]);
-		if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
-		      $emailerr = "Invalid email format";
-		}
-		}
-		
-		
-		if (empty($_POST["street"])) {
-			$streeterr = "Street is required";
-		} else {
-			$street = test_input($_POST["street"]);
-		if (!preg_match("/^[a-zA-Z ]*$/",$street)) {
-		      $streeterr = "Only letters and white space allowed";
-		}
-		}
-		
-		
-		if (empty($_POST["city"])) {
-			$cityerr = "City is required";
-		} else {
-			$city = test_input($_POST["city"]);
-		if (!preg_match("/^[a-zA-Z ]*$/",$city)) {
-		      $cityerr = "Only letters and white space allowed";
-		}
-		}
-		
-		if (empty($_POST["state"])) {
-			$stateerr = "State is required";
-		} else {
-			$state = test_input($_POST["state"]);
-		if (!preg_match("/^[a-zA-Z ]*$/",$state)) {
-		      $stateerr = "Only letters and white space allowed";
-		}
-		}
-		
-		
-		if (empty($_POST["zip"])) {
-			$ziperr = "Zip Code is required";
-		} else {
-			$zip = test_input($_POST["zip"]);
-		if (is_numeric($zip)) {
-			$ziperr = "Only numbers allowed";
-			}
-		}
-
-		
-		
-		if (empty($_POST["password"])) {
-			$passworderr = "Password is required";
-		} else {
-			$password = test_input($_POST["password"]);
-		}
+<!-- <script>
+	function getFormData() {
+		var firstName = document.getElementsByName("firstname");
+		var lastName = document.getElementsByName("lastname");
+		var email = document.getElementsByName("email");
+		var streetAddress = document.getElementsByName("streetaddress");
+		var city = document.getElementsByName("city");
+		var state = document.getElementsByName("state");
+		var zip = document.getElementsByName("zip");
+		var password = document.getElementsByName("password");
 	}
-
-	function test_input($data) {
-		$data = trim($data);
-		$data = stripslashes($data);
-		$data = htmlspecialchars($data);
-		return $data;
-	}
-	?>
-</script>
+</script> -->
 </body>
 </html>
