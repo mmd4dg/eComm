@@ -11,17 +11,11 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
 		<!--[if lte IE 8]><script src="assets/js/ie/html5shiv.js"></script><![endif]-->
 		<link rel="stylesheet" href="assets/css/main.css" />
+		<link rel="stylesheet" href="http://www.w3schools.com/lib/w3.css">
+      	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
+      	<link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css">
 		<!--[if lte IE 8]><link rel="stylesheet" href="assets/css/ie8.css" /><![endif]-->
 		<!--[if lte IE 9]><link rel="stylesheet" href="assets/css/ie9.css" /><![endif]-->
-		<link rel="apple-touch-icon" sizes="57x57" href="/apple-icon-57x57.png">
-		<link rel="apple-touch-icon" sizes="60x60" href="/apple-icon-60x60.png">
-		<link rel="apple-touch-icon" sizes="72x72" href="/apple-icon-72x72.png">
-		<link rel="apple-touch-icon" sizes="76x76" href="/apple-icon-76x76.png">
-		<link rel="apple-touch-icon" sizes="114x114" href="/apple-icon-114x114.png">
-		<link rel="apple-touch-icon" sizes="120x120" href="/apple-icon-120x120.png">
-		<link rel="apple-touch-icon" sizes="144x144" href="/apple-icon-144x144.png">
-		<link rel="apple-touch-icon" sizes="152x152" href="/apple-icon-152x152.png">
-		<link rel="apple-touch-icon" sizes="180x180" href="/apple-icon-180x180.png">
 		<link rel="icon" type="image/png" sizes="192x192"  href="/android-icon-192x192.png">
 		<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
 		<link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png">
@@ -35,11 +29,29 @@
 	</head>
 	<body>
 
+		<!-- Navbar -->
+      <div class="w3-top" style="z-index: 999">
+      <ul class="w3-navbar w3-white w3-card-2 w3-left-align">
+        <li class="w3-hide-medium w3-hide-large w3-opennav w3-right">
+          <a class="w3-padding-large" href="javascript:void(0)" onclick="myFunction()" title="Toggle Navigation Menu"><i class="fa fa-bars"></i></a>
+        </li>
+        <li><a href="index.html" class="w3-hover-none w3-hover-text-grey w3-padding-large">[borrow]</a></li>
+        <li class="w3-hover-text-grey w3-hide-small"><a href="aboutus.html" class=" w3-padding-large">about</a></li>
+        <li class="w3-hide-small"><a href="signup.html" class=" w3-padding-large">sign up</a></li>
+      </div>
+
+      <!-- Navbar on small screens -->
+      <div id="navDemo" class="w3-hide w3-hide-large w3-hide-medium w3-top" style="margin-top:46px">
+        <ul class="w3-navbar w3-left-align w3-black">
+          <li><a class="w3-padding-large" href="aboutus.html">About</a></li>
+        </ul> 
+      </div>
+
 		<!-- Page Wrapper -->
 			<div id="page-wrapper">
 
 				<!-- Header -->
-					<header id="header">
+					<!-- <header id="header">
 						<h1><a href="index.html"><img src="images/new_logo_small.png" alt="" style="vertical-align:middle;">[BORROW]</a></h1>
 						<nav id="nav">
 							<ul>
@@ -55,12 +67,12 @@
 								</li>
 							</ul>
 						</nav>
-					</header>
+					</header> -->
 
 				<!-- Main -->
 					<article id="main">
 						<header>
-							<p> </p><p> </p>
+							<img src="images/logo.png" alt="" style="float: center; max-width: 20%;">
 							<h2>About Us</h2>
 							<p> </p><p> </p>
 						</header>
@@ -69,27 +81,32 @@
 								<div style="width: 100%;">
   								<div style="float:left; max-width: 65%;">
 								<h2 style="color:#ff4730">Our Story</h2>
-								<p>[Borrow] was created to connect people wanting to share their items, equipment or skills with those in their area looking to [borrow] these goods.</p>
+								<p>[borrow] was created to connect people wanting to share their items, equipment or skills with those in their area looking to rent these goods.</p>
 								<p>
-								In every US household, many types of tools, books, sporting equiptment etc. sit unused in storage. Prior to [borrow], a rental application consolidating the [borrow]ing of all local goods did not exist.
+								In every household, countless items sit stagnantly in storage, waiting for you to find a use for them. Our platform allows you to list these items on a local board for people in your community to see. People can then request to rent your items for a flat daily fee. The customers rate your items, while you rate the customers.
+
+								[borrow] is the first peer-to-peer rental platform allowing anyone to rent any of their posessions.
 								</p>
 								
 								<p><h5>
-								We hope to reduce the amount of time equipment sits idle by sharing it amongst the community; dually allowing individuals to profit off of their otherwise unused items. 
+								We hope to reduce the amount of time equipment sits idle by sharing it amongst the community; benefiting the community while allowing renters to make money. 
 								</h5></p>
 
 								<p><img src="images/canoe.jpg" style="max-width:100%; height:auto; width:auto/9;"></p>
 
 								<p><h5>
-								[Borrow] reduces the pressure for individuals to purchase material items for limited-time use.
+								[borrow] reduces the pressure for individuals to purchase material items for limited-time use.
 								</h5></p>
 
 								<p> 
 								Furthermore, we allow people to market their skills as freelance professionals. Oftentimes individuals require the assistance of someone with a specific skillset for only a short period of time (i.e. a DJ for a party, a photographer for a wedding).  Borrow can also facilitate connections for these occasions.
 								</p>
 								</div>
-   								<div style="float:right; text-align:center;">
-   								<h3>Meet the Founders</h3>
+   								<div style="float:center; text-align:center;">
+   								<h3>Meet the<br />Founders</h3>
+
+   								<!-- issue when code is collapsed with formatting --> 
+
    								<ul style="list-style-type: none; float:center;">
    								<li><img src="images/colvin.png" style="max-width:100%; height:auto; width:auto/9;">
    								</li>
@@ -97,7 +114,7 @@
    								<li><img src="images/molly.png" style="max-width:100%; height:auto; width:auto/9;"></li>
    								<li><h3>Molly</h3></li>
    								<li><img src="images/johnathan.png" style="max-width:100%; height:auto; width:auto/9;"></li>
-   								<li><h3>Johnathan</h3></li>
+   								<li><h3>Jonathan</h3></li>
    								</ul>
 								</div>
 								</div>
@@ -112,7 +129,7 @@
 								<p>Post items in less than 60 seconds and start earning money off of your unused goods. 
 								<ul style="text-align: left;"><li> Snap some pictures of your item</li>
 								<li> Mark our calendar for when you won't be using it </li>
-								<li> Set a price per day for [borrow]ing</li></ul>
+								<li> Set a per-day rent price </li></ul>
 								</p>
 							</div>
 						</section>
@@ -121,8 +138,8 @@
 								<h2>[borrow]ing is fun</h2>
 								<p>[Borrow] items and equiptment that help you to pursue your dreams, for less. 
 								<ul style="text-align: left;">
-								<li>Browse items and select the dates you would like to [borrow] </li>
-								<li>Pay the listed price-per-day or bargain with the lender, through our unique negotiating feature, until agreement </li>
+								<li>Browse items and select the dates you would like to rent </li>
+								<li>Pay the listed price-per-day or bargain with the lender until an agreement is reached </li>
 								<li>Pickup item at a system-designeted location in your area</li>
 								</p>
 							</div>
@@ -132,8 +149,8 @@
 								<h2>Your safety, our priority</h2>
 								<ul style="text-align: left;">
 								<li>Areas of exchange are mandated by [borrow] to be public, likely-populous areas</li>
-								<li>If an item is not as pictured or described when you arrive at the exchange, you will not be charged and [borrow] will freeze the account-in-question, pending reviewal</li>
-								<li>[Borrow]ers accepting items at pickup will be held liable, via our photo re-exchange process, for any damages incurred during their rental </li>
+								<li>If an item is not as pictured or described when you arrive at the exchange, you will not be charged and [borrow] will freeze the account-in-question, pending review</li>
+								<li>Borrowers accepting items at pickup will be held liable, via our photo re-exchange process, for any damages incurred during their rental </li>
 							</div>
 						</section>
 						<section class="spotlight">
@@ -169,6 +186,5 @@
 			<script src="assets/js/util.js"></script>
 			<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
 			<script src="assets/js/main.js"></script>
-
 	</body>
 </html>
