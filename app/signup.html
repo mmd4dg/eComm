@@ -66,10 +66,15 @@
 						<div class="form">
 							<div id="signup">
 								<h1>Sign Up For Free</h1>
-								<form method="POST"
-								action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>
+								<form action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="post">			
 								<div class="top-row">
 									<div class="field-wrap">
+
+										Name: <input type="text" name="name">
+										  <span class="error">* <?php echo $nameErr;?></span>
+										    <br><br>
+
+
 										  <label>First Name<span class="req">*</span></label>
 							                          <input type="text" name="first" required autocomplete="off" />
 										   <span class="error"><?php echo $firsterr;?></span>	
@@ -175,9 +180,13 @@
 <script>
 	<?php
 	$first = $last = $email = $street = $city = $state = $zip = $password = "";
-	$firsterr = $lasterr = $emailerr = $streeterr = $cityerr = $stateerr = $ziperr = $passworderr = "";
+	$firsterr = $lasterr = $emailerr = $streeterr = $cityerr = $stateerr = $ziperr = $passworderr = $nameErr = "";
 
 	if ($_SERVER["REQUEST_METHOD"] == "POST") {
+
+					   
+					      
+		
 		if (empty($_POST["first"])) {
 			$firsterr = "First Name is required";
 		} else {
